@@ -22,7 +22,14 @@ namespace efCoreApp.Data
         [Required(ErrorMessage = "E-posta zorunludur.")]
         [EmailAddress(ErrorMessage = "Geçersiz e-posta adresi.")]
         public string? Eposta { get; set; }
+        public string AdSoyad
+        {
+            get
+            {
+                return this.OgrenciAd + " " + this.OgrenciSoyad;
+            }
 
+        }
         public string? Telefon { get; set; }
 
     }
