@@ -1,0 +1,6 @@
+dotnet tool install -g Microsoft.Web.LibraryManager.Cli
+dotnet tool install --global dotnet-ef --version 7.0.15
+dotnet add package Microsoft.EntityFrameworkCore.Design --version 7.0.15
+dotnet ef migrations add InitialCreate
+dotnet ef migrations remove // Kaldırmak istersen
+dotnet ef database update
