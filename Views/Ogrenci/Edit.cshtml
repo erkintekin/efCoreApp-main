@@ -4,7 +4,21 @@
     ViewData["Title"] = "Öğrenci Düzenleme";
 }
 
-
+<div class="row">
+    <div class="col-8">
+        <form asp-action="Edit" asp-controller="Ogrenci" method="post"></form>
+    </div>
+    <div class="col-4">
+        <h4>Kurslar</h4>
+        <hr>
+        <ul>
+            @foreach(var item in @Model.KursKayitlar)
+            {
+                <li>@item.Kurs.Baslik</li>
+            }
+        </ul>
+    </div>
+</div>
 
 <form asp-action="Edit" asp-controller="Ogrenci" method="post">
 

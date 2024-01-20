@@ -32,5 +32,7 @@ namespace efCoreApp.Data
         }
         public string? Telefon { get; set; }
 
+        public ICollection<KursKayit> KursKayitlar { get; set; } = null!;
+
     }
 }

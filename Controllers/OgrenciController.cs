@@ -73,7 +73,7 @@ namespace efCoreApp.Controllers
 
         public async Task<IActionResult> Edit(int? id)
         {
-            Ogrenci? selectedStudent = await _context.Ogrenciler.FirstOrDefaultAsync(s => s.OgrenciId == id);
+            Ogrenci? selectedStudent = await _context.Ogrenciler.Include(o => o.KursKayitlar).ThenInclude(o => o.Kurs).FirstOrDefaultAsync(s => s.OgrenciId == id);
 
             if (selectedStudent == null)
             {
